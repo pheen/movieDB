@@ -1,0 +1,7 @@
+<%= render "movies/nav" %>
+
+<section id="movies">
+
+	<%= render :partial => "movies/poster", :collection => @movies, :as => :movie %>
+
+</section>

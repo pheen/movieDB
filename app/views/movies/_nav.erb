@@ -1,0 +1,38 @@
+<nav id="container">
+	<nav id="genres">
+		<h4>genres</h4>
+
+		<ul>
+			<li><%= link_to "All", genre_path(:genre => '%', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Action", genre_path(:genre => 'Action', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Adventure", genre_path(:genre => 'Adventure', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Animation", genre_path(:genre => 'Animation', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Biography", genre_path(:genre => 'Biography', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Comedy", genre_path(:genre => 'Comedy', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Crime", genre_path(:genre => 'Crime', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Documentary", genre_path(:genre => 'Documentary', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Drama", genre_path(:genre => 'Drama', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Family", genre_path(:genre => 'Family', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Fantasy", genre_path(:genre => 'Fantasy', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Horror", genre_path(:genre => 'Horror', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Music", genre_path(:genre => 'Music', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Mystery", genre_path(:genre => 'Mystery', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Romance", genre_path(:genre => 'Romance', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "Sci-Fi", genre_path(:genre => 'Sci-Fi', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>	
+			<li><%= link_to "Thriller", genre_path(:genre => 'Thriller', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+			<li><%= link_to "War", genre_path(:genre => 'War', :order => "title", :dir => "ASC"), :remote => true, "data-replace" => '#movies' %></li>
+		</ul>
+	</nav>
+
+	<ul id="order">
+		<li class="by">date added</li>
+		<li>alphabetical</li>
+	</ul>
+
+	<%= form_tag( { :controller => 'movies', :action => 'search' }, :method => 'post', :remote => true, "data-replace" => '#movies' ) do -%>
+		<input name="key" placeholder="title, director, actor, etc..." type="text">
+		<input name="order" type="hidden" value="title" />
+		<input name="dir" type="hidden" value="ASC" />
+		<input type="submit" value="Search">
+	<% end -%>
+</nav>

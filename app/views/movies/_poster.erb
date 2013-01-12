@@ -1,0 +1,29 @@
+<figure style="background: url('<%= "/movies/#{movie.title}/folder.jpg" %>') no-repeat; background-size: 201px 297px" updated="<%= movie.updated_at.to_s(format = :number) %>">
+	<ul>
+		<li class="title">
+			<%= movie.title %>
+		</li>
+		<li class="year">
+			<%= movie.year %>
+		</li>
+		<li class="rating">
+			<%= movie.rating %>
+		</li>
+		<li>
+			<%= movie.director %>
+		</li>
+		<li>
+			<%= movie.genre %>
+		</li>
+		<li>
+			<%= movie.cast.split(' / ')[0..2].join(' / ') %>
+		</li>
+		<li class="plot">
+			<%= movie.plot %>
+		</li>
+		<li class="icons">
+			<a class="details" href="#"></a>
+			<a class="playMovie" href="<%= movieUrl(movie.title) %>"></a>
+		</li>
+	</ul>
+</figure>
