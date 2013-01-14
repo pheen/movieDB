@@ -5,7 +5,7 @@ class Upload < ActiveRecord::Base
 
   ## Search
   scope :in_genre, lambda { |genre, order, dir|
-  	where("genre LIKE ?", "%#{genre}%").order("#{order} #{dir}")
+    where("genre LIKE ?", "%#{genre}%").order("#{order} #{dir}")
   }
 
   pg_search_scope :search_by_keywords, :against => [ :title,

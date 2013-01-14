@@ -1,13 +1,13 @@
 class MoviesController < ApplicationController
 
   def index
-  	@movies = Upload.order("updated_at DESC").limit(8)
+    @movies = Upload.order("updated_at DESC").limit(8)
   end
 
   def update_genre
-  	@movies = Upload.in_genre(params[:genre], params[:order], params[:dir])
+    @movies = Upload.in_genre(params[:genre], params[:order], params[:dir])
 
-  	render :partial => 'movies', :content_type => 'text/html'
+    render :partial => 'movies', :content_type => 'text/html'
   end
 
   def search

@@ -9,7 +9,7 @@ class UploadController < ApplicationController
   def lookup
     @upload_status = Upload.move_to_db(params)
 
-  	render :template => "upload/lookup"
+    render :template => "upload/lookup"
   end
 
 end
