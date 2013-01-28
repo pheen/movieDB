@@ -91,15 +91,30 @@ nav#genres a:hover {
 /* Nav search */
 nav form {
 	float: right;
-	margin: 20px 50px 0 0;
+	margin: 16px 50px 0 0;
 }
 
 nav form input[name="key"] {
 	width: 230px;
-	padding: 4px;
+	padding: 8px 5px 5px 10px;
 	background: rgba(0, 0, 0, 0.6);
-	border: 1px solid #3c3c3c;
-	color: #FFF;
+	border: none;
+	border-bottom: 1px solid #646464;
+	color: #fff;
+	font-size: 14px;
+
+	box-shadow: 0 0 10px 0 black, 0 0 6px 0 #575757, 0 0 6px 0 #575757 inset;
+	border-radius: 3px;
+	text-shadow: 0 1px 3px #000;
+}
+
+nav form input[type="submit"] {
+	margin-left: 2px;
+	padding: 6px 8px 5px 8px;
+	background: rgba(0, 0, 0, 0.6);
+	border: none;
+	border-bottom: 1px solid #646464;
+	color: #646464;
 	font-size: 14px;
 
 	box-shadow: 0 0 10px 0 black, 0 0 6px 0 #575757, 0 0 6px 0 #575757 inset;
