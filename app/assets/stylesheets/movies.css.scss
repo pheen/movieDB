@@ -89,6 +89,13 @@ nav#genres a:hover {
 
 
 /* Nav search */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 nav form {
 	float: right;
 	margin: 16px 50px 0 0;
@@ -107,6 +114,7 @@ nav form input[name="key"] {
 	border-radius: 3px;
 	text-shadow: 0 1px 3px #000;
 }
+nav form input[name="key"]:focus { outline: none; }
 
 nav form input[type="submit"] {
 	margin-left: 2px;
@@ -213,4 +221,20 @@ li.icons a.playMovie {
 	bottom: 7px;
 	right: 27px;
 	background: url('/assets/icon_playMovie.png') no-repeat;
+}
+
+#no_results {
+	float: none;
+	width: 250px;
+	height: 269px;
+	margin: 45px auto;
+	padding-top: 100px;
+	background: rgba(0,0,0, .5);
+	border: 1px solid black;
+	font-size: 16px;
+	text-align: center;
+	
+	box-shadow: 0 0 10px 0 black,0 20px 10px -10px black, 0 2px 10px 0px black, 0 0 25px 0px black inset;
+	text-shadow: 0 1px 3px black,0 2px 1px red, 0 0 5px black;
+	border-radius: 3px;
 }

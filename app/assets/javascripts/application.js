@@ -110,12 +110,17 @@ $(function() {
     .data('type', 'html')
     .live('ajax:success', function(event, data) {
       var $this = $(this);
+      var delayTime = 1;
 
       // fadeOut & remove current movies
       $('#movies').children().each( function(index) {
         $(this).delay(50*index).fadeOut(50, function() {
           $(this).remove();
         });
+
+        if (index == $('#movies').children().length-1) {
+          delayTime = 50*index;
+        }
       });
 
       // add new movies to DOM as hidden
@@ -137,9 +142,14 @@ $(function() {
       });
 
       // fadeIn current search
-      $('#movies').children().each( function(index) {
-        $(this).delay(100*index).fadeIn(120);
-      });
+      if (data.length > 0) {
+        $('#movies').children().each( function(index) {
+          $(this).delay(80*index).fadeIn(120);
+        });
+      } else {
+        $('#movies').append('<figure id="no_results" style="opacity: 0;"><p>Danger, Will Robinson!</p></figure>');
+      }
+      if ($('#no_results').length > 0) { $('#no_results').delay(delayTime).animate({opacity:1},300); }
 
       $this.trigger('ajax:replaced');
     });
