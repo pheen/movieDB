@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Upload.order("updated_at DESC").limit(8)
+    @movies = Upload.order("created_at DESC").limit(8)
   end
 
   def update_genre

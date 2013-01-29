@@ -184,6 +184,8 @@ $(document).ready(function(){
 
   /*  sort order */
   var order = "updated"
+  /* [BUG] first click .by does not sort, need to add check
+  if (!click) { var click = true; }*/
 
   $('#order li').click(function () {
     if ($(this).is('.by')) {
@@ -194,9 +196,13 @@ $(document).ready(function(){
 
         /* sort current */
         if (order == "title") {
-          $('#movies figure').tsort('li.title',{order:'desc'});
+          $('#movies figure').animate({opacity:0},110, function(){
+            $('#movies figure').tsort('li.title',{order:'desc'}).animate({opacity:1},110);
+          });
         } else {
-          $('#movies figure').tsort({attr:'updated',order:'desc'});
+          $('#movies figure').animate({opacity:0},110, function(){
+            $('#movies figure').tsort({attr:'updated',order:'desc'}).animate({opacity:1},110);
+          });
         }
       } else {
         $('#genres a').attr('href', function(i,a){ return a.replace( /(dir=)[a-z]+/ig, '$1ASC'); });
@@ -204,10 +210,16 @@ $(document).ready(function(){
 
         /* sort current */
         if (order == "updated") {
-          $('#movies figure').tsort('li.title',{order:'asc'});
+          $('#movies figure').animate({opacity:0},110, function(){
+            $('#movies figure').tsort('li.title',{order:'asc'}).animate({opacity:1},110);
+          });
         } else {
-          $('#movies figure').tsort({attr:'updated',order:'asc'});
+          $('#movies figure').animate({opacity:0},110, function(){
+            $('#movies figure').tsort({attr:'updated',order:'asc'}).animate({opacity:1},110);
+          });
         }
+
+        click = false;
       }
     } else {
       /* toggle order and class on first click */
@@ -215,21 +227,32 @@ $(document).ready(function(){
         $('#genres a').attr('href', function(i,a){ return a.replace( /(order=)[a-z_]+/ig, '$1title'); });
         $('nav form input[name="order"]').attr('value', 'title');
         /* sort current */
-        $('#movies figure').tsort('li.title');
-        order = "title"
+        $('#movies figure').animate({opacity:0},110, function(){
+            $('#movies figure').tsort('li.title').animate({opacity:1},110);
+        });
+        order = "title";
       } else {
         $('#genres a').attr('href', function(i,a){ return a.replace( /(order=)[a-z_]+/ig, '$1updated_at'); });
         $('nav form input[name="order"]').attr('value', 'updated_at');
         /* sort current */
-        $('#movies figure').tsort({attr:'updated'});
-        order = "updated"
+        $('#movies figure').animate({opacity:0},110, function(){
+            $('#movies figure').tsort({attr:'updated'}).animate({opacity:1},110);
+        });
+        order = "updated";
       }
 
-      $('.by').removeClass('by');
-      $(this).addClass('by');
+      /* toggle glow */
+      $('.by').toggleClass('by');
+      $(this).toggleClass('by');
     }
   });
 
+  
+  /* highlight current genre */
+  $('#genres li').click( function() {
+    $('#genres .by').toggleClass('by');
+    $(this).toggleClass('by');
+  });
   
   /* search highlight */
   $('input[name="key"]').on("focus", function(e){

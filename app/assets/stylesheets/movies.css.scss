@@ -82,9 +82,16 @@ nav#genres a:hover {
 	margin-right: 50px;
 }
 
-#order .by {
+#order .by,
+#genres .by {
 	text-shadow: 0 0 3px white,
 				 0 0 7px white;
+
+    -webkit-transition:text-shadow 0.5s;
+    -moz-transition:text-shadow 0.5s;
+    -o-transition:text-shadow 0.5s;
+    -ms-transition:text-shadow 0.5s;
+    transition:text-shadow 0.5s;
 }
 
 
