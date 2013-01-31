@@ -1,3 +1,171 @@
 // Place all the styles related to the Upload controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#upload h3 {
+	font-family: Arial;
+	margin-top: 10px;
+	padding: 3px 12px;
+
+	text-shadow: 0 1px 0 #fff;
+	border-radius: 3px;
+}
+
+
+/* Misc dark boxes */
+.dark {
+	background: rgba(0,0,0, .5);
+	border: 1px solid black;
+	font-size: 16px;
+	
+	box-shadow: 0 0 10px 0 black,0 20px 10px -10px black, 0 2px 10px 0px black, 0 0 25px 0px black inset;
+	border-radius: 3px;
+}
+
+#upload figure {
+	display: block;
+	width: 560px;
+	height: 167px;
+	margin: 15px;
+	padding: 2px 20px;
+}
+
+#upload figure label a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#upload figure label a:hover {
+	text-shadow: 0 0 3px white,
+				 0 0 7px white;
+
+    -webkit-transition:text-shadow 0.5s;
+    -moz-transition:text-shadow 0.5s;
+    -o-transition:text-shadow 0.5s;
+    -ms-transition:text-shadow 0.5s;
+    transition:text-shadow 0.5s;
+}
+
+/* Radio button styling */
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+	display: block;
+	margin: 10px 0;
+    color:#f2f2f2;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url('check_radio_sheet.png') -38px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background:url('check_radio_sheet.png') -57px top no-repeat;
+}
+
+
+/* Button Style 10 */
+/*Normal*/
+#upload input[type="submit"] {
+	display: block;
+	width: 120px;
+	height: 35px;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	font-size: 10pt;
+	float: left;
+	margin: 10px 20px;
+}
+
+.ml-button-10 {
+	background-color: #85DD7C;
+	border: 1px solid #158D34;
+	-moz-box-shadow:inset 0px 0px 1px rgba(26,154,72,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(26,154,72,1);
+	box-shadow:inset 0px 0px 1px rgba(26,154,72,1);
+	background-image: -o-linear-gradient(90deg , rgb(112,201,101) 0%, rgb(182,237,176) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(112,201,101) 0%, rgb(182,237,176) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(112,201,101) 0%, rgb(182,237,176) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(112,201,101) 0%, rgb(182,237,176) 100%);
+	background-image: linear-gradient(90deg , rgb(112,201,101) 0%, rgb(182,237,176) 100%);
+	color: #1d7819;
+	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
+}
+
+
+/*Hover*/
+.ml-button-10:hover {
+	background-color: #A7ED9E;
+	background-image: -o-linear-gradient(90deg , rgb(138,211,129) 0%, rgb(204,237,200) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(138,211,129) 0%, rgb(204,237,200) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(138,211,129) 0%, rgb(204,237,200) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(138,211,129) 0%, rgb(204,237,200) 100%);
+	background-image: linear-gradient(90deg , rgb(138,211,129) 0%, rgb(204,237,200) 100%);
+	}
+
+
+/*Active*/
+.ml-button-10:active {
+	background-color: #5DC34E;
+	-moz-box-shadow:inset 0px 0px 5px rgba(26,154,72,1);
+	-webkit-box-shadow:inset 0px 0px 5px rgba(26,154,72,1);
+	box-shadow:inset 0px 0px 5px rgba(26,154,72,1);
+	background-image: -o-linear-gradient(90deg , rgb(182,237,176) 0%, rgb(112,201,101) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(182,237,176) 0%, rgb(112,201,101) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(182,237,176) 0%, rgb(112,201,101) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(182,237,176) 0%, rgb(112,201,101) 100%);
+	background-image: linear-gradient(90deg , rgb(182,237,176) 0%, rgb(112,201,101) 100%);
+	text-shadow: none;
+}
+
+/* Button Style 1 */
+/*Normal*/
+.ml-button-1 {
+	background-color: #F3F3F3;
+	border: 1px solid #ACACAC;
+	-moz-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	background-image: -o-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	color: #2B2C2B;
+	text-shadow: rgba(254,254,254,0.5) 0px 1px 0px;
+}
+/*Hover*/
+.ml-button-1:hover {
+	background-color: #FFFFFF;
+	background-image: -o-linear-gradient(90deg , rgb(246,246,246) 0%, rgb(254,254,254) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(246,246,246) 0%, rgb(254,254,254) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(246,246,246) 0%, rgb(254,254,254) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(246,246,246) 0%, rgb(254,254,254) 100%);
+	background-image: linear-gradient(90deg , rgb(246,246,246) 0%, rgb(254,254,254) 100%);
+}
+/*Active*/
+.ml-button-1:active {
+	background-color: #F9F9F9;
+	-moz-box-shadow:inset 0px 0px 5px rgba(187,187,187,1);
+	-webkit-box-shadow:inset 0px 0px 5px rgba(187,187,187,1);
+	box-shadow:inset 0px 0px 5px rgba(187,187,187,1);
+	background-image: -o-linear-gradient(90deg , rgb(254,254,254) 0%, rgb(246,246,246) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(254,254,254) 0%, rgb(246,246,246) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(254,254,254) 0%, rgb(246,246,246) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(254,254,254) 0%, rgb(246,246,246) 100%);
+	background-image: linear-gradient(90deg , rgb(254,254,254) 0%, rgb(246,246,246) 100%);
+	text-shadow: none;
+}

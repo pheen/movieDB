@@ -41,7 +41,7 @@ class Upload < ActiveRecord::Base
 
         insert = new( imdbid:      i_id,
                       title:       folder,
-                      director:    doc.at_css('a[itemprop="director"]').content,
+                      director:    doc.at_css('[itemprop="director"] a').content,
                       genre:       join_content(doc.css('.infobar a[href*="/genre/"]')),
                       length:      doc.css('.infobar')[0].content[/\d{1,3}\smin/],
                       plot:        doc.css('p[itemprop="description"]')[0].content.strip,

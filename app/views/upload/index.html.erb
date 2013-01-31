@@ -1,17 +1,21 @@
-<h1>Upload</h1>
-<p>Select the proper IMDB reference:</p>
+<section id="upload">
+	<p>Select the proper IMDB reference:</p>
 
-<%= form_tag( { :controller => 'upload', :action => 'lookup' }, :method => 'post') do -%>
-	<% Upload.folders.each do |folder| %>
-		<h3><%= folder %></h3>
+	<%= form_tag( { :controller => 'upload', :action => 'lookup' }, :method => 'post') do -%>
+		<% Upload.folders.each do |folder| %>
+			<figure class="dark">
+				<h3 class="ml-button-1"><%= folder %></h3>
 
-		<% search_imdb_for(folder.to_s).each do |i_title, i_id| %>
-			<input type="radio" name="<%= folder %>" value="<%= i_id %>" <% if ((@counter / 3) % 1 == 0) %>checked="yes"<% end %> ><a href="http://www.imdb.com/title/<%= i_id %>/" target="_blank"><%= i_title %></a><br />
-			<% @counter += 1 %>
+				<% search_imdb_for(folder.to_s).each do |i_title, i_id| %>
+					<input type="radio" name="<%= folder %>" id="<%= i_id %>" value="<%= i_id %>" <% if ((@counter / 3) % 1 == 0) %>checked="yes"<% end %> >
+					<label for="<%= i_id %>"><span></span>
+						<a href="http://www.imdb.com/title/<%= i_id %>/" target="_blank"><%= i_title %></a>
+					</label>
+					<% @counter += 1 %>
+				<% end %>
+			</figure>
 		<% end %>
 
-		<br />
-	<% end %>
-
-	<input type="submit" value="confirm">
-<% end -%>
+		<input type="submit" value="confirm" class="ml-button-10">
+	<% end -%>
+</section>

@@ -147,9 +147,9 @@ $(function() {
           $(this).delay(80*index).fadeIn(120);
         });
       } else {
-        $('#movies').append('<figure id="no_results" style="opacity: 0;"><p>Danger, Will Robinson!</p></figure>');
+        $('#movies').append('<figure class="dark no_results" style="opacity: 0;"><p>Danger, Will Robinson!</p></figure>');
       }
-      if ($('#no_results').length > 0) { $('#no_results').delay(delayTime).animate({opacity:1},300); }
+      if ($('.no_results').length > 0) { $('.no_results').delay(delayTime).animate({opacity:1},300); }
 
       $this.trigger('ajax:replaced');
     });

@@ -1,2 +1,3 @@
 == movieDB
 
+[BUG] first click .by does not sort, need to add check
